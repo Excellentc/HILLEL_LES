@@ -1,4 +1,4 @@
-sum = 0
+summ = 0
 for i in range(3):
     while 1 == 1:
         klas_pip = int(input(f"Введите количество учеников в классе {i+1} : "))
@@ -7,9 +7,9 @@ for i in range(3):
         else:
             print("Количество учеников не должно быть отрицательным\n")
     if klas_pip == 0:
-        sum = sum
+        summ = summ
     elif klas_pip % 2 == 0:
-        sum = sum + klas_pip / 2
+        summ = summ + klas_pip / 2
     else:
-        sum = sum + klas_pip // 2 +1
-print("Общее количество парт", sum)
+        summ = summ + klas_pip // 2 +1
+print("Общее количество парт", summ)
