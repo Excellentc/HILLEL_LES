@@ -30,23 +30,32 @@ if inp == 1 or inp == 2:
         print()
     print()
 elif inp == 3 or inp == 4:
-    for i in range(x*2-1):
-        for j in range(x*2):
-            if inp == 3:  # ромб простой
+    for i in range(x):
+        for j in range(x):
+            if inp == 3:                            # ромб простой
                 if (
-                        x+i >= j >= x - i and i <= x - 1
-                        or i - x + 2 == j > 0
-                        or j + 1 == 2 * x - i + x - 1 and j < x * 2 - 1
+                        i == j + x // 2
+                        or i == j - x // 2
+                        or j - x // 2 == x - i - 1
+                        or j + x // 2 == x - i - 1
+                        or x // 2 + i >= j >= x // 2 - i and i <= x // 2
+                        # or j == x // 2 and x % 2 == 0
+                        # or j == x // 2 - 1 and x % 2 == 0
+                        # or j == x // 2 and x % 2 == 1
                 ):
                     print("*  ", end="")
                 else:
                     print("   ", end="")
-            elif inp == 4:  # ромб с палочкой
+            elif inp == 4:                           # ромб с палочкой
                 if (
-                        x+i >= j >= x-i and i <= x-1
-                        or i - x + 2 == j > 0
-                        or j + 1 == 2 * x - i + x - 1 and j < x * 2 - 1
-                        or i >= x-2 and j == x
+                        i == j + x // 2
+                        or i == j - x // 2
+                        or j - x // 2 == x - i - 1
+                        or j + x // 2 == x - i - 1
+                        or x // 2 + i >= j >= x // 2 - i and i <= x // 2
+                        or j == x // 2 and x % 2 == 0
+                        or j == x // 2 - 1 and x % 2 == 0
+                        or j == x // 2 and x % 2 == 1
                 ):
                     print("*  ", end="")
                 else:
