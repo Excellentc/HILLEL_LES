@@ -5,18 +5,19 @@
 
 
 def season(x1):
-    if 0 < x1 == 2 or x1 == 12:
-        print("Зима")
+    if 0 < x1 <= 2 or x1 == 12:
+        return "Зима"
     elif 2 < x1 <= 5:
-        print("Весна")
+        return "Весна"
     elif 5 < x1 <= 8:
-        print("Лето")
+        return "Лето"
     elif 8 < x1 <= 11:
-        print("Осень")
+        return "Осень"
     else:
         print("Неправильный ввод")
 
 
 x = int(input("Введите № месяца года: "))
 print()
-print(season(x))
+y = season(x)
+print(f"{x} месяц года, это - ", y)
