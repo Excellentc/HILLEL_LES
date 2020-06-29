@@ -10,11 +10,11 @@
 """
 import random
 
+
 lst = [random.randint(15, 70) for _ in range(15)]
 k = int(input("Введите индекс элемента, от 0 до 14: "))
 print(lst)
-lst.remove(lst[k])
+for i in range(k, len(lst)-1):
+    lst[i] = lst[i+1]
 print(lst)
-lst.pop()
-print(lst)
-
+print(lst.pop())
