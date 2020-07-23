@@ -7,5 +7,5 @@
     Задача решается в одну строку.
 """
 
-lst = {a: chr(a) for a in range(32, 128)}
+lst = {a: chr(a) for a in range(32, 129)}
 print(lst)
