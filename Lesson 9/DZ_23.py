@@ -11,9 +11,36 @@ d = {
    'fruit': ['baca', 'bacca', 'popum'],
    'punishment': ['malum', 'multa']
 }
-d_new = {}
+# Первый вариант с ошибкой:
+# Для каждого ключа (латинского слова), значение должно быть типа список (список английских слов).
+# d_new = {}
+# for i in d:
+#     for j in d[i]:
+#         d_new[j] = i
+# print(d)
+# print(d_new)
+
+#   Крайний вариант
+d_new = []
+dd = {}
+
+# Создаем список значений словаря
 for i in d:
     for j in d[i]:
-        d_new[j] = i
-print(d)
-print(d_new)
+        d_new.append(j)
+d_new = list(set(d_new))
+
+# По каждому значению из списка, ищем ключ и
+# добавляем в новый словарь,со сменой ключа на значение
+for i in range(len(d_new)):
+    x = []
+    for k in d:
+        for j in d[k]:
+            if d_new[i] == j:
+                x.append(k)
+        else:
+            continue
+    dd[d_new[i]] = x
+
+print("Исходный словарь", d)
+print("Вывернутый словарь", dd)
