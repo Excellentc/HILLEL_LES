@@ -41,13 +41,13 @@ def bubble_sort(l, n):
                 fl = False
         if fl:
             break
-    # Пузырек по столбцам
+    # Пузырек по столбцам (добавляем стобец в массив)
     for x in range(len(l) - 1):
         l1 = []
         for k in range(len(l) - 1):
             l1.append(l[k][x])
-
-        for i in range(n - 2):
+    # Сортируем столбец в массиве L1
+        for i in range(n - 1):
             fl = True
             for j in range(n - 1 - i):
                 if l1[j] > l1[j + 1]:
