@@ -19,8 +19,13 @@ class Count:
             return 'Its over'
 
 
-e = int(input("Введите начало отсчета : "))
-w = int(input("Введите конец отсчета : "))
+while 1 == 1:
+    e = int(input("Введите начало отсчета : "))
+    w = int(input("Введите конец отсчета : "))
+    if e > w or e == w:
+        print("Начала отсчета должно быть меньше, чем конец отсчета, введите параметры заного.")
+    else:
+        break
 count_1 = Count(go=e, stop=w)
 for _ in range(e, w + 1):
     print(count_1.up())
