@@ -16,7 +16,7 @@ class Student:
 
 class Group:
 
-    def __init__(self, group=[]):
+    def __init__(self, group):
         self.group = group
 
     def st_add(self):
