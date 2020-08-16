@@ -31,7 +31,7 @@ class Group:
         d.append(Student.grade)
         self.group.append(d)
 
-    def group_pr(self):     # Печать группы
+    def group_pr(self):     # Print group
         if len(self.group) == 0:
             print("Group is empty")
         for i in range(len(self.group)):
@@ -39,7 +39,7 @@ class Group:
                 print('{:10}'.format(self.group[i][j]).rstrip("/n"), end="")
             print()
 
-    def st_del(self, name):     #Удаление студента по имени
+    def st_del(self, name):     # Delete student by name
         for i in range(len(self.group)):
             if name in self.group[i]:
                 return self.group.pop(i)
