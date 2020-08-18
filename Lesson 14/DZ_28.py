@@ -18,8 +18,8 @@ class Group:
     def __init__(self, student_list):
         self.st_list = student_list
 
-    def student_add(self, x, y, c):
-        self.st_list.append((x, y, c))
+    def student_add(self, x1, y1, c):
+        self.st_list.append((x1, y1, c))
 
     def group_print(self):     # Print group
         if len(self.st_list) == 0:
@@ -38,10 +38,10 @@ class Group:
 l1 = []
 while 1 == 1:
     ch = int(input("Make choice:" "\n"
-                   " List group - 1 : ""\n"
-                   " Add student - 2 :""\n"
-                   " Delete student - 3 : ""\n"
-                   " Quit - 4 : "))
+                   "    List group - 1 : ""\n"
+                   "    Add student - 2 :""\n"
+                   "    Delete student - 3 : ""\n"
+                   "    Quit - 4 : "))
     print()
     if ch == 1:     # List group
         x = Group(l1)
