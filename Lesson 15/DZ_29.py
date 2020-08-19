@@ -11,28 +11,34 @@
 
 
 class Buffer:
-    def __init__(self, *number):
-        self.number = number
+    def __init__(self):  # конструктор без аргументов
+        self.list_numbers = []
 
-    def add(self, number):
-        sum_ = 0
-        for i in range(len(number)):
-            sum_ += number[i]
-        print("Amount of number (", *number, ") its", sum_, sep=' ', end='\n', flush=False)
+    def student_add(self, a):  # добавить следующую часть последовательности\
+        self.list_numbers += a
+        for i in range(0, len(self.list_numbers), 5):
+            if len(self.list_numbers) < 5:
+                return print("Numbers out. You need add new ", 5 - len(self.list_numbers), " numbers")
+            print("Summa = ", sum(self.list_numbers[0:5:1]), " for numbers : ", self.list_numbers[0:5])
+            self.list_numbers = self.list_numbers[5::]
+
+    # Честно говоря не понимаю для чего этот метод может использоваться
+    # def get_current_part(self):
+    # вернуть сохраненные в текущий момент элементы последовательности в порядке, в котором они были добавлены
 
 
 print(" Enter a sequence of natural numbers. ", "\n",
-      "For end - input enter empty line : ")
+      "For END INPUT- enter empty line : ", '\n',
+      "For QUIT - enter Q", "\n")
 l1 = []
 amp = Buffer()
-count = 0
 while 1 == 1:
-    x = input()
-    count += 1
-    if x == "":
-        print("You are quit")
+    x = input("Input you sequence numbers  :   ")
+    if x == "q" or x == "Q":
+        print("You are QUIT")
         break
-    l1.append(int(x))
-    if count % 5 == 0:
-        amp.add(l1[count-5:count:1])
-        print("Enter next numbers or quit( empty line )")
+    elif x == "":
+        amp.student_add(l1)
+        l1 = []
+    else:
+        l1.append(int(x))
